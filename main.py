@@ -20,7 +20,7 @@ guessed_list = []
 
 while len(guessed_list) < 50:
 
-    answer_state = screen.textinput(title=f"{len(guessed_list)}/50 States Correct", prompt="What's another state's name?")
+    answer_state = screen.textinput(title=f"{len(guessed_list)}/50 States Correct", prompt="What's another state's name?").title()
 
     if answer_state in all_states:
         guessed_list.append(answer_state)
