@@ -22,6 +22,13 @@ while len(guessed_list) < 50:
 
     answer_state = screen.textinput(title=f"{len(guessed_list)}/50 States Correct", prompt="What's another state's name?").title()
 
+    if answer_state == "Exit":
+        missing_states = []
+        for state in all_states:
+            if state not in guessed_list:
+                missing_states.append(state)
+        print(missing_states)
+        break
     if answer_state in all_states:
         guessed_list.append(answer_state)
         t = turtle.Turtle()
@@ -33,4 +40,3 @@ while len(guessed_list) < 50:
 
 # If answer_state is one of the fifty from data
 # Create a turtle to place that on the map
-screen.exitonclick()
